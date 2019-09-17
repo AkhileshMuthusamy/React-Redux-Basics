@@ -7,10 +7,18 @@ import store from './store';
 import { STORY_ARCHIVE } from './constants/actionTypes';
 import { getReadableStories } from './selectors/story';
 
-ReactDOM.render(
-  <App stories={getReadableStories(store.getState())} onArchive={id => store.dispatch({ type: STORY_ARCHIVE, id })} />,
-  document.getElementById('root')
-);
+function render() {
+  ReactDOM.render(
+    <App
+      stories={getReadableStories(store.getState())}
+      onArchive={id => store.dispatch({ type: STORY_ARCHIVE, id })}
+    />,
+    document.getElementById('root')
+  );
+}
+
+store.subscribe(render);
+render();
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
