@@ -1,4 +1,42 @@
+# React Redux Sample Code
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+```
+create-react-app react-redux-tutorial
+cd react-redux-tutorial
+cd src
+rm logo.svg App.js App.test.js App.css
+mkdir components reducers actions selectors store sagas api constants
+cd components
+touch App.js Stories.js Story.js App.css Stories.css Story.css
+```
+
+## Folder Structure
+
+```
+-src/
+--actions/
+--api/
+--components/
+---App.js
+---App.css
+---Stories.js
+---Stories.css
+---Story.js
+---Story.css
+--constants/
+---actionTypes.js
+--reducers/
+---index.js
+--sagas/
+---index.js
+--selectors/
+--store/
+---index.js
+--index.css
+--index.js
+```
 
 ## Available Scripts
 
