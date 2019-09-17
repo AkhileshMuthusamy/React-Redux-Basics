@@ -28,20 +28,26 @@ const Stories = ({ stories }) => {
   console.log(stories);
   return (
     <div className="stories">
-      <div className="stories-header">
-        {Object.keys(COLUMNS).map(key => {
-          console.log(key);
-          return (
-            <span key={key} style={{ width: COLUMNS[key].width }}>
-              {COLUMNS[key].label}
-            </span>
-          );
-        })}
-      </div>
+      <StoriesHeader columns={COLUMNS} />
 
       {(stories || []).map(story => (
         <Story key={story.objectID} story={story} columns={COLUMNS} />
       ))}
+    </div>
+  );
+};
+
+const StoriesHeader = ({ columns }) => {
+  return (
+    <div className="stories-header">
+      {Object.keys(columns).map(key => {
+        console.log(key);
+        return (
+          <span key={key} style={{ width: columns[key].width }}>
+            {columns[key].label}
+          </span>
+        );
+      })}
     </div>
   );
 };
