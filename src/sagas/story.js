@@ -8,7 +8,7 @@ function* handleFetchStories(action) {
     const result = yield call(fetchStories, query);
     yield put(doAddStories(result.hits));
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     yield put(doFetchErrorStories(error));
   }
 }

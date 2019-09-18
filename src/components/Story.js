@@ -5,7 +5,7 @@ import { doArchiveStory } from '../actions/archive';
 import { ButtonInline } from './Button';
 
 const Story = ({ story, columns, onArchive }) => {
-  console.log(columns);
+  // console.log(columns);
   const { title, url, author, num_comments, points, objectID } = story;
   return (
     <div className="story">
