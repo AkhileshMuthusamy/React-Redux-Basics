@@ -2,6 +2,7 @@ import React from 'react';
 import './Story.css';
 import { connect } from 'react-redux';
 import { doArchiveStory } from '../actions/archive';
+import { ButtonInline } from './Button';
 
 const Story = ({ story, columns, onArchive }) => {
   console.log(columns);
@@ -18,14 +19,6 @@ const Story = ({ story, columns, onArchive }) => {
         <ButtonInline onClick={() => onArchive(objectID)}>Archive</ButtonInline>
       </span>
     </div>
-  );
-};
-
-const ButtonInline = ({ onClick, type = 'button', children }) => {
-  return (
-    <button type={type} className="button-inline" onClick={onClick}>
-      {children}
-    </button>
   );
 };
 
