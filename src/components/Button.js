@@ -8,7 +8,7 @@ const ButtonInline = ({ onClick, type = 'button', children }) => {
   );
 };
 
-const Button = (onClick, className, type = 'button', children) => {
+const Button = ({ onClick, className, type = 'button', children }) => {
   return (
     <button type={type} className={className} onClick={onClick}>
       {children}
