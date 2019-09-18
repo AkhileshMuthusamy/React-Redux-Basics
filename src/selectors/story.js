@@ -3,7 +3,11 @@ function isNotArchived(archivedIds) {
     return archivedIds.indexOf(story.objectID) === -1;
   };
 }
-function getReadableStories(state) {
-  return state.storyState.filter(isNotArchived(state.archiveState));
+
+function getReadableStories({ storyState, archiveState }) {
+  return storyState.stories.filter(isNotArchived(archiveState));
 }
-export { getReadableStories };
+
+const getFetchError = ({ storyState }) => storyState.error;
+
+export { getReadableStories, getFetchError };
